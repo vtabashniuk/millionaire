@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include fontFamily(600);
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+  // height: calc((367px / 900px) * 100vh);
+}
