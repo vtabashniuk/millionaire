@@ -4,7 +4,7 @@
 .button {
   display: block;
   height: 48px;
-  width: 288px;
+  max-width: 288px;
   padding: 16px 0;
   border-radius: 8px;
   background-color: c.$startButtonColor;
@@ -19,7 +19,7 @@
 
   @media screen and (min-width: 768px) {
     height: 64px;
-    width: 296px;
+    max-width: 296px;
     padding: 21px 0;
     border-radius: 12px;
     font-size: 20px;

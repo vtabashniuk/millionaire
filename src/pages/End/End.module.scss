@@ -15,8 +15,8 @@
 
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr 152px auto;
-  gap: 24px;
+  grid-template-rows: 1fr 136px auto;
+  gap: 32px;
   max-width: 288px;
   margin: 0 auto;
 
@@ -46,14 +46,13 @@
   }
 }
 
-.title {
-  @include fontFamily(600, 32px);
+.textContainer {
+  font-size: 32px;
   text-align: center;
 
   @media screen and (min-width: 568px) {
     align-self: end;
     text-align: left;
-    font-size: 24px;
   }
 
   @media screen and (min-width: 768px) {
@@ -62,5 +61,19 @@
 
   @media screen and (min-width: 1180px) {
     font-size: 56px;
+  }
+}
+
+.title {
+  margin-bottom: 8px;
+  color: c.$secondaryTextColor;
+  font-size: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 32px;
   }
 }

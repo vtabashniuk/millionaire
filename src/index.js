@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { MobileProvider } from "./Context/MobileProvider";
 import Home from "./pages/Home/Home";
 import Game from "./pages/Game";
-import End from "./pages/End";
+import End from "./pages/End/End";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
