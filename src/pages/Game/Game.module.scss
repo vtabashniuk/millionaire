@@ -1,0 +1,76 @@
+@use "colors" as c;
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: c.$gameBackgroundColor;
+}
+
+.burgerMenu {
+  display: flex;
+  justify-content: end;
+  padding: 16px 16px 16px 0;
+}
+
+.sideBar {
+  position: absolute;
+  top: 56px;
+  height: calc(100vh - 56px);
+  width: 100vw;
+  background-color: inherit;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  height: calc(100vh - 56px);
+  padding-bottom: 24px;
+}
+
+.question {
+  font-size: 18px;
+  text-align: center;
+}
+
+.answersList {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 8px;
+  text-align: left;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  list-style-type: none;
+
+  & > .answerListItem {
+    counter-increment: list-counter;
+    padding: 20px 24px;
+    // background-color: c.$whiteColor;
+    background-image: url("../../img/svg/Inactive.svg");
+
+    &.selected {
+      background-image: url("../../img/svg/Selected.svg");
+    }
+
+    &.correct {
+      background-image: url("../../img/svg/Correct.svg");
+    }
+
+    &.wrong {
+      background-image: url("../../img/svg/Wrong.svg");
+    }
+
+    &.disabled {
+      pointer-events: none;
+    }
+
+    &::before {
+      content: counter(list-counter, upper-latin) "";
+      margin-left: 24px;
+      margin-right: 8px;
+      color: c.$hoverStartButtonColor;
+      font-weight: 600;
+    }
+  }
+}

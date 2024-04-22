@@ -2,6 +2,7 @@
 @import "mixins";
 
 .button {
+  @include fontFamily($font-size: 14px);
   display: block;
   height: 48px;
   max-width: 288px;
@@ -11,7 +12,6 @@
   color: c.$whiteColor;
   text-align: center;
   text-decoration: none;
-  @include fontFamily($font-size: 14px);
 
   &:active {
     background-color: c.$pressedStartButtonColor;

@@ -14,7 +14,7 @@ const End = () => {
           <div className={styles.textContainer}>
             <p className={styles.title}>Total score</p>
             <p>
-              {Number(location.state.points).toLocaleString("en", {
+              {Number(location.state.amount).toLocaleString("en", {
                 style: "currency",
                 currency: "USD",
                 maximumFractionDigits: 0,

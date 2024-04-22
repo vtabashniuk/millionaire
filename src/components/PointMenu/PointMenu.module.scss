@@ -1,0 +1,26 @@
+@use "colors" as c;
+
+.pointList {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  gap: 8px;
+  width: 100%;
+
+  & > .pointListItem {
+    background-image: url("../../img/svg/InactivePoints.svg");
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+
+    &.active {
+      background-image: url("../../img/svg/ActivePoints.svg");
+      color: c.$startButtonColor;
+    }
+
+    &.earned {
+      background-image: url("../../img/svg/Earned.svg");
+      color: c.$earnedPointsColor;
+    }
+  }
+}
