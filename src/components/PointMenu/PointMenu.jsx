@@ -20,13 +20,6 @@ const PointMenu = ({ questions, points, id }) => {
         {questions.toReversed().map((item) => (
           <li
             key={item.amount}
-            // style={
-            //   id === item.id
-            //     ? { backgroundColor: "yellow" }
-            //     : points >= item.amount
-            //     ? { backgroundColor: "green" }
-            //     : {}
-            // }
             className={getClassList(item)}
           >
             {Number(item.amount).toLocaleString("en", {
