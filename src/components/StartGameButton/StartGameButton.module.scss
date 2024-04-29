@@ -1,5 +1,5 @@
-@use "colors" as c;
-@import "mixins";
+@import "/src/styles/colors";
+@import "/src/styles/mixins";
 
 .button {
   @include fontFamily($font-size: 14px);
@@ -8,13 +8,13 @@
   max-width: 288px;
   padding: 16px 0;
   border-radius: 8px;
-  background-color: c.$startButtonColor;
-  color: c.$whiteColor;
+  background-color: $startButtonColor;
+  color: $whiteColor;
   text-align: center;
   text-decoration: none;
 
   &:active {
-    background-color: c.$pressedStartButtonColor;
+    background-color: $pressedStartButtonColor;
   }
 
   @media screen and (min-width: 768px) {
@@ -25,7 +25,7 @@
     font-size: 20px;
 
     &:hover {
-      background-color: c.$hoverStartButtonColor;
+      background-color: $hoverStartButtonColor;
     }
   }
 }

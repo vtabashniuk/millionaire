@@ -1,15 +1,14 @@
-@use "colors" as c;
-@import "mixins";
+@import "/src/styles/colors";
 
 .container {
   height: 100vh;
   width: 100vw;
   padding-top: 80px;
-  background: c.$mobileGradient;
+  background: $mobileGradient;
 
   @media screen and (min-width: 568px) {
     padding: calc((229px / 900px) * 100vh) 0 0 0;
-    background: c.$desktopGradient;
+    background: $desktopGradient;
   }
 }
 
@@ -66,7 +65,7 @@
 
 .title {
   margin-bottom: 8px;
-  color: c.$secondaryTextColor;
+  color: $secondaryTextColor;
   font-size: 18px;
 
   @media screen and (min-width: 768px) {

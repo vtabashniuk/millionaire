@@ -1,4 +1,4 @@
-@use "colors" as c;
+@import "/src/styles/colors";
 
 .pointList {
   display: grid;
@@ -32,12 +32,12 @@
 
     &.active {
       background-image: url("../../img/svg/ActivePoints.svg");
-      color: c.$startButtonColor;
+      color: $startButtonColor;
     }
 
     &.earned {
       background-image: url("../../img/svg/Earned.svg");
-      color: c.$earnedPointsColor;
+      color: $earnedPointsColor;
     }
   }
 }

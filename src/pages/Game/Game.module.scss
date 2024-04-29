@@ -1,9 +1,9 @@
-@use "colors" as c;
+@import "/src/styles/colors";
 
 .container {
   height: 100vh;
   width: 100vw;
-  background-color: c.$gameBackgroundColor;
+  background-color: $gameBackgroundColor;
 
   @media screen and (min-width: 768px) {
     display: grid;
@@ -32,7 +32,7 @@
     position: static;
     height: 100vh;
     width: 100%;
-    background-color: c.$whiteColor;
+    background-color: $whiteColor;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -69,7 +69,6 @@
   grid-template-rows: auto;
   row-gap: 8px;
   text-align: left;
-  // width: 100%;
   font-weight: 400;
   font-size: 14px;
   list-style-type: none;
@@ -122,7 +121,7 @@
     &::before {
       content: counter(list-counter, upper-latin) "";
       margin-right: 8px;
-      color: c.$hoverStartButtonColor;
+      color: $hoverStartButtonColor;
       font-weight: 600;
     }
   }
