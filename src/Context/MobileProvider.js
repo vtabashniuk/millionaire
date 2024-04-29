@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MobileContext } from "./MobileContext";
+import PropTypes from "prop-types";
 
 export const MobileProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -19,4 +20,8 @@ export const MobileProvider = ({ children }) => {
   return (
     <MobileContext.Provider value={isMobile}>{children}</MobileContext.Provider>
   );
+};
+
+MobileProvider.propTypes = {
+  children: PropTypes.element.isRequired,
 };

@@ -1,12 +1,12 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { MobileContext } from "../../Context";
+import { MobileContext } from "Context";
+import data from "questions.json";
+import { BurgerMenu } from "components/BurgerMenu";
+import { PointMenu } from "components/PointMenu";
 import styles from "./Game.module.scss";
-import data from "../../questions.json";
-import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
-import PointMenu from "../../components/PointMenu/PointMenu";
 
-const Game = () => {
+export const Game = () => {
   const isMobile = useContext(MobileContext);
   const navigate = useNavigate();
   const [pointsMenu, setPointsMenu] = useState(false);
@@ -25,19 +25,18 @@ const Game = () => {
     if (answer.toLowerCase() === correct_answer.toLowerCase()) {
       setCorrectOption(answer);
       setTimeout(() => {
+        setPoints(amount);
+        setDisabledOption(false);
         if (questionId < questions.length - 1) {
           setQuestionId((prevId) => (prevId += 1));
-          setPoints(amount);
-          setDisabledOption(false);
         } else {
-          setPoints(amount);
-          navigate("/end", { state: { amount } });
+          navigate("/millionaire/end", { state: { amount } });
         }
       }, 750);
     } else {
       setWrongOption(answer);
       setTimeout(() => {
-        navigate("/end", { state: { amount: points } });
+        navigate("/millionaire/end", { state: { amount: points } });
       }, 750);
     }
   };
@@ -101,5 +100,3 @@ const Game = () => {
     </>
   );
 };
-
-export default Game;

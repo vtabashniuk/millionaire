@@ -1,10 +1,9 @@
 import { useContext } from "react";
-import { mobileImages, desktopImages } from "../../img";
-import { MobileContext } from "../../Context";
+import { MobileContext } from "Context";
+import { mobileImages, desktopImages } from "img";
 
-const ResponsiveImage = () => {
+export const ResponsiveImage = () => {
   const isMobile = useContext(MobileContext);
-
   const images = isMobile ? mobileImages : desktopImages;
 
   return (
@@ -21,5 +20,3 @@ const ResponsiveImage = () => {
     </picture>
   );
 };
-
-export default ResponsiveImage;

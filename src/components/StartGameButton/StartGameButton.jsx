@@ -1,12 +1,15 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import styles from "./StartGameButton.module.scss";
 
-const StartGameButton = ({ title }) => {
+export const StartGameButton = ({ title }) => {
   return (
-    <NavLink to={"/game"} className={styles.button}>
+    <NavLink to={"/millionaire/game"} className={styles.button}>
       {title}
     </NavLink>
   );
 };
 
-export default StartGameButton;
+StartGameButton.propTypes = {
+  title: PropTypes.string.isRequired,
+};

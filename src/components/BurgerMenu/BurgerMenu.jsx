@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
+import icons from "img/svg/icons.svg";
 import styles from "./BurgerMenu.module.scss";
-import icons from "../../img/svg/icons.svg";
 
-const BurgerMenu = ({ isOpen, onClick }) => {
+export const BurgerMenu = ({ isOpen, onClick }) => {
   return (
     <button
       type="button"
@@ -28,4 +29,13 @@ const BurgerMenu = ({ isOpen, onClick }) => {
     </button>
   );
 };
-export default BurgerMenu;
+
+BurgerMenu.defaultProps = {
+  isOpen: false,
+  onClick: () => {},
+};
+
+BurgerMenu.propTypes = {
+  isOpen: PropTypes.bool,
+  onClick: PropTypes.func,
+};

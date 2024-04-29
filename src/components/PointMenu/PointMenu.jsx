@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import styles from "./PointMenu.module.scss";
 
-const PointMenu = ({ questions, points, id }) => {
+export const PointMenu = ({ questions, points, id }) => {
   const getClassList = (item) => {
     const classes = [styles.pointListItem];
 
@@ -18,10 +19,7 @@ const PointMenu = ({ questions, points, id }) => {
     <>
       <ul className={styles.pointList}>
         {questions.toReversed().map((item) => (
-          <li
-            key={item.amount}
-            className={getClassList(item)}
-          >
+          <li key={item.amount} className={getClassList(item)}>
             {Number(item.amount).toLocaleString("en", {
               style: "currency",
               currency: "USD",
@@ -34,4 +32,8 @@ const PointMenu = ({ questions, points, id }) => {
   );
 };
 
-export default PointMenu;
+PointMenu.propTypes = {
+  questions: PropTypes.arrayOf(PropTypes.object).isRequired,
+  points: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+};

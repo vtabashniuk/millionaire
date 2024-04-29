@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
-import ResponsiveImage from "../../components/ResponsiveImage/ResponsiveImage";
-import StartGameButton from "../../components/StartGameButton/StartGameButton";
+import { ResponsiveImage } from "components/ResponsiveImage";
+import { StartGameButton } from "components/StartGameButton";
 import styles from "./End.module.scss";
 
-const End = () => {
+export const End = () => {
   const location = useLocation();
 
   return (
@@ -28,5 +28,3 @@ const End = () => {
     </>
   );
 };
-
-export default End;

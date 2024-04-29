@@ -1,8 +1,8 @@
-import ResponsiveImage from "../../components/ResponsiveImage/ResponsiveImage";
-import StartGameButton from "../../components/StartGameButton/StartGameButton";
+import { ResponsiveImage } from "components/ResponsiveImage";
+import { StartGameButton } from "components/StartGameButton";
 import styles from "./Home.module.scss";
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       <div className={styles.container}>
@@ -18,5 +18,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
